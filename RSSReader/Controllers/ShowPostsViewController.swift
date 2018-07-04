@@ -8,12 +8,15 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
+protocol ShowPostsViewControllerDelegate: class {
+    func showPostsViewControllerDidMenuButton(_ view: ShowPostsViewController)
+}
 
 class ShowPostsViewController: UICollectionViewController {
     
     //MARK: Properties
     var posts: [Post] = []
+    weak var delegate: ShowPostsViewControllerDelegate?
     
     private var largePostPosition = 1
     
@@ -28,8 +31,15 @@ class ShowPostsViewController: UICollectionViewController {
         if let layout = collectionView?.collectionViewLayout as? PostsLayout {
             layout.delegate = self
         }
+        
+        
     }
-
+    
+    //MARK: Actions
+    @IBAction func sideMenuButtonTapped(_ sender: UIBarButtonItem) {
+        delegate?.showPostsViewControllerDidMenuButton(self)
+    }
+    
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -42,7 +52,7 @@ class ShowPostsViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionCells.postCell, for: indexPath) as? PostCollectionViewCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellIdentifiers.postCell, for: indexPath) as? PostCollectionViewCell else {
             fatalError("Current cell is not a instance of PostCollectionViewCell")
         }
         

@@ -20,7 +20,7 @@ struct RSSElements {
     static let imageType = "image/jpeg"
 }
 
-struct CollectionCells {
+struct CellIdentifiers {
     static let postCell = "Post Cell"
+    static let menuCell = "Menu Cell"
 }
-

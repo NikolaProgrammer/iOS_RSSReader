@@ -21,6 +21,10 @@
 		913A204B20E67053009BEA34 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913A204A20E67053009BEA34 /* Constants.swift */; };
 		913A204D20E671AA009BEA34 /* ShowPostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913A204C20E671AA009BEA34 /* ShowPostsViewController.swift */; };
 		913A205020E6725A009BEA34 /* PostCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913A204F20E6725A009BEA34 /* PostCollectionViewCell.swift */; };
+		91EDAA9D20EB5A630059E2C1 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91EDAA9C20EB5A630059E2C1 /* SideMenuViewController.swift */; };
+		91EDAA9F20EB5C330059E2C1 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91EDAA9E20EB5C330059E2C1 /* ContainerViewController.swift */; };
+		91EDAAA120EB82A60059E2C1 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91EDAAA020EB82A60059E2C1 /* MenuTableViewCell.swift */; };
+		91EDAAA320EB8CC60059E2C1 /* MenuPointersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91EDAAA220EB8CC60059E2C1 /* MenuPointersView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +65,10 @@
 		913A204A20E67053009BEA34 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		913A204C20E671AA009BEA34 /* ShowPostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowPostsViewController.swift; sourceTree = "<group>"; };
 		913A204F20E6725A009BEA34 /* PostCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCollectionViewCell.swift; sourceTree = "<group>"; };
+		91EDAA9C20EB5A630059E2C1 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
+		91EDAA9E20EB5C330059E2C1 /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
+		91EDAAA020EB82A60059E2C1 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
+		91EDAAA220EB8CC60059E2C1 /* MenuPointersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPointersView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +190,8 @@
 			isa = PBXGroup;
 			children = (
 				913A204C20E671AA009BEA34 /* ShowPostsViewController.swift */,
+				91EDAA9C20EB5A630059E2C1 /* SideMenuViewController.swift */,
+				91EDAA9E20EB5C330059E2C1 /* ContainerViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -190,6 +200,8 @@
 			isa = PBXGroup;
 			children = (
 				913A204F20E6725A009BEA34 /* PostCollectionViewCell.swift */,
+				91EDAAA020EB82A60059E2C1 /* MenuTableViewCell.swift */,
+				91EDAAA220EB8CC60059E2C1 /* MenuPointersView.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -327,13 +339,17 @@
 			files = (
 				913A204320E66841009BEA34 /* Post.swift in Sources */,
 				913A204D20E671AA009BEA34 /* ShowPostsViewController.swift in Sources */,
+				91EDAAA120EB82A60059E2C1 /* MenuTableViewCell.swift in Sources */,
 				913A201920E6675D009BEA34 /* RSSReader.xcdatamodeld in Sources */,
+				91EDAA9F20EB5C330059E2C1 /* ContainerViewController.swift in Sources */,
 				913A201120E6675D009BEA34 /* AppDelegate.swift in Sources */,
 				91248E1920EA29AC00D36855 /* PostsLayout.swift in Sources */,
 				913A204620E668F0009BEA34 /* RSSParser.swift in Sources */,
 				913A205020E6725A009BEA34 /* PostCollectionViewCell.swift in Sources */,
 				91248E1620EA097D00D36855 /* UIImage+Downloading.swift in Sources */,
+				91EDAA9D20EB5A630059E2C1 /* SideMenuViewController.swift in Sources */,
 				913A204B20E67053009BEA34 /* Constants.swift in Sources */,
+				91EDAAA320EB8CC60059E2C1 /* MenuPointersView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iMv-0F-ip8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iMj-Zk-wHv">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -14,12 +16,12 @@
             <objects>
                 <collectionViewController id="ka9-Hu-vEY" customClass="ShowPostsViewController" customModule="RSSReader" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="hET-Jf-WUh">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <collectionViewLayout key="collectionViewLayout" id="ZeJ-Xe-AhG" customClass="PostsLayout" customModule="RSSReader" customModuleProvider="target"/>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Post Cell" id="yQf-Bn-KcS" customClass="PostCollectionViewCell" customModule="RSSReader" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="Post Cell" id="yQf-Bn-KcS" customClass="PostCollectionViewCell" customModule="RSSReader" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="169" height="153"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -27,14 +29,14 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Gba-BV-j4a">
-                                            <rect key="frame" x="0.0" y="0.0" width="169" height="115"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="169" height="27"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </imageView>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" scrollEnabled="NO" text="Title" translatesAutoresizingMaskIntoConstraints="NO" id="xps-li-f7T">
-                                            <rect key="frame" x="0.0" y="123" width="169" height="30"/>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" text="Title" translatesAutoresizingMaskIntoConstraints="NO" id="xps-li-f7T">
+                                            <rect key="frame" x="0.0" y="103" width="169" height="50"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="DZT-4d-TQg"/>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="Oev-W8-F0W"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences" smartDashesType="yes"/>
@@ -43,13 +45,13 @@
                                 </view>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="Gba-BV-j4a" firstAttribute="leading" secondItem="yQf-Bn-KcS" secondAttribute="leading" id="03t-CC-joD"/>
-                                    <constraint firstItem="xps-li-f7T" firstAttribute="top" secondItem="Gba-BV-j4a" secondAttribute="bottom" constant="8" id="4ZX-bs-4TP"/>
-                                    <constraint firstAttribute="trailing" secondItem="xps-li-f7T" secondAttribute="trailing" id="KWS-f8-xba"/>
-                                    <constraint firstItem="Gba-BV-j4a" firstAttribute="top" secondItem="yQf-Bn-KcS" secondAttribute="top" id="L21-7e-Vnw"/>
-                                    <constraint firstItem="xps-li-f7T" firstAttribute="leading" secondItem="yQf-Bn-KcS" secondAttribute="leading" id="Zrq-hx-liU"/>
-                                    <constraint firstAttribute="trailing" secondItem="Gba-BV-j4a" secondAttribute="trailing" id="gQt-9g-Uqv"/>
-                                    <constraint firstAttribute="bottom" secondItem="xps-li-f7T" secondAttribute="bottom" id="oH1-mn-lON"/>
+                                    <constraint firstAttribute="trailing" secondItem="Gba-BV-j4a" secondAttribute="trailing" id="8jo-5D-1hR"/>
+                                    <constraint firstAttribute="trailing" secondItem="xps-li-f7T" secondAttribute="trailing" id="FME-8F-I4M"/>
+                                    <constraint firstItem="Gba-BV-j4a" firstAttribute="top" secondItem="yQf-Bn-KcS" secondAttribute="top" id="ID0-ly-bhB"/>
+                                    <constraint firstItem="xps-li-f7T" firstAttribute="top" secondItem="Gba-BV-j4a" secondAttribute="bottom" constant="2" id="NZI-5K-9cd"/>
+                                    <constraint firstItem="Gba-BV-j4a" firstAttribute="leading" secondItem="yQf-Bn-KcS" secondAttribute="leading" id="R84-R8-pj0"/>
+                                    <constraint firstItem="xps-li-f7T" firstAttribute="leading" secondItem="yQf-Bn-KcS" secondAttribute="leading" id="ROg-gA-hcf"/>
+                                    <constraint firstAttribute="bottom" secondItem="xps-li-f7T" secondAttribute="bottom" id="eH9-PW-r1B"/>
                                 </constraints>
                                 <size key="customSize" width="169" height="153"/>
                                 <connections>
@@ -66,21 +68,71 @@
                     <navigationItem key="navigationItem" title="News" id="KYQ-wv-5yh">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="menu" id="wqa-FW-RqK">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="sideMenuButtonTapped:" destination="ka9-Hu-vEY" id="xLI-qG-kDi"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gle-fr-6rI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="305" y="152"/>
+            <point key="canvasLocation" x="1173.5999999999999" y="154.27286356821591"/>
+        </scene>
+        <!--Container View Controller-->
+        <scene sceneID="4SG-j0-8Dy">
+            <objects>
+                <viewController id="iMj-Zk-wHv" customClass="ContainerViewController" customModule="RSSReader" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hN5-rh-fDE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GAW-8B-fFK">
+                                <rect key="frame" x="-200" y="0.0" width="200" height="667"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="Ep5-u2-2yE"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="qVE-x9-5zJ" kind="embed" id="3fI-9k-S5l"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H8Q-Ly-eJ5">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="R5S-ag-EwT"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="iMv-0F-ip8" kind="embed" id="E66-lR-VfZ"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="GAW-8B-fFK" firstAttribute="bottom" secondItem="hN5-rh-fDE" secondAttribute="bottom" id="80D-So-xya"/>
+                            <constraint firstItem="GAW-8B-fFK" firstAttribute="leading" secondItem="0bI-M1-bbV" secondAttribute="leading" constant="-200" id="Eg9-zf-wDC"/>
+                            <constraint firstItem="H8Q-Ly-eJ5" firstAttribute="bottom" secondItem="0bI-M1-bbV" secondAttribute="bottom" id="U9z-rw-66c"/>
+                            <constraint firstItem="GAW-8B-fFK" firstAttribute="top" secondItem="hN5-rh-fDE" secondAttribute="top" id="gAu-XF-H80"/>
+                            <constraint firstItem="H8Q-Ly-eJ5" firstAttribute="top" secondItem="hN5-rh-fDE" secondAttribute="top" id="h40-80-BGy"/>
+                            <constraint firstItem="H8Q-Ly-eJ5" firstAttribute="leading" secondItem="GAW-8B-fFK" secondAttribute="trailing" id="lN4-oL-P85"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="0bI-M1-bbV"/>
+                    </view>
+                    <connections>
+                        <outlet property="sideMenuConstraint" destination="Eg9-zf-wDC" id="2Wf-wC-pY4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mbw-bn-cbE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-103.2" y="-618.44077961019491"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="A8E-5T-1fW">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iMv-0F-ip8" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="fHZ-MM-xhZ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="fHZ-MM-xhZ">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <color key="textShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -97,7 +149,94 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GZz-EW-QeV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-514" y="152"/>
+            <point key="canvasLocation" x="377" y="155"/>
+        </scene>
+        <!--Side Menu View Controller-->
+        <scene sceneID="e6V-7w-Iif">
+            <objects>
+                <viewController id="qVE-x9-5zJ" customClass="SideMenuViewController" customModule="RSSReader" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Vlc-1v-p6i">
+                        <rect key="frame" x="0.0" y="0.0" width="200" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="RSS READER" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="yiy-tv-Nmm">
+                                <rect key="frame" x="0.0" y="20" width="200" height="84"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="84" id="yZa-dE-qiD"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Georgia-BoldItalic" family="Georgia" pointSize="28"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="q12-tY-V1F">
+                                <rect key="frame" x="0.0" y="112" width="200" height="555"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="Menu Cell" id="m3e-HJ-TGm" customClass="MenuTableViewCell" customModule="RSSReader" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="200" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="m3e-HJ-TGm" id="qUO-Ty-wzz">
+                                            <rect key="frame" x="0.0" y="0.0" width="200" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d5B-Lr-Gc5">
+                                                    <rect key="frame" x="79.5" y="9" width="41" height="26.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                    <color key="textColor" red="0.7484299031276147" green="0.7484299031276147" blue="0.7484299031276147" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P7p-eh-L2S" customClass="MenuPointersView" customModule="RSSReader" customModuleProvider="target">
+                                                    <rect key="frame" x="8" y="0.0" width="35" height="44"/>
+                                                    <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="35" id="QMa-eb-T0e"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="P7p-eh-L2S" firstAttribute="top" secondItem="qUO-Ty-wzz" secondAttribute="top" id="9wr-Ol-FE9"/>
+                                                <constraint firstAttribute="bottom" secondItem="P7p-eh-L2S" secondAttribute="bottom" id="VKT-GC-2v3"/>
+                                                <constraint firstItem="P7p-eh-L2S" firstAttribute="leading" secondItem="qUO-Ty-wzz" secondAttribute="leading" constant="8" id="v5h-Qh-7Pg"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="d5B-Lr-Gc5" firstAttribute="centerY" secondItem="m3e-HJ-TGm" secondAttribute="centerY" id="ExW-Av-fS3"/>
+                                            <constraint firstItem="d5B-Lr-Gc5" firstAttribute="centerX" secondItem="m3e-HJ-TGm" secondAttribute="centerX" id="zab-sE-ZH3"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="pointersView" destination="P7p-eh-L2S" id="NsV-0M-sEC"/>
+                                            <outlet property="titleLabel" destination="d5B-Lr-Gc5" id="9t4-Gf-zPe"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="qVE-x9-5zJ" id="kc4-CN-zTG"/>
+                                    <outlet property="delegate" destination="qVE-x9-5zJ" id="Ap9-8e-30d"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="yiy-tv-Nmm" firstAttribute="leading" secondItem="Vlc-1v-p6i" secondAttribute="leading" id="4hr-ba-gub"/>
+                            <constraint firstAttribute="trailing" secondItem="q12-tY-V1F" secondAttribute="trailing" id="CLj-5G-T93"/>
+                            <constraint firstItem="q12-tY-V1F" firstAttribute="top" secondItem="yiy-tv-Nmm" secondAttribute="bottom" constant="8" id="GjE-ad-e7a"/>
+                            <constraint firstAttribute="trailing" secondItem="yiy-tv-Nmm" secondAttribute="trailing" id="Pad-lg-aef"/>
+                            <constraint firstItem="yiy-tv-Nmm" firstAttribute="top" secondItem="Vlc-1v-p6i" secondAttribute="topMargin" id="SKi-tA-CvK"/>
+                            <constraint firstItem="q12-tY-V1F" firstAttribute="leading" secondItem="Vlc-1v-p6i" secondAttribute="leading" id="cgs-it-CJg"/>
+                            <constraint firstAttribute="bottom" secondItem="q12-tY-V1F" secondAttribute="bottom" id="nFo-X7-Si6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dMu-2l-SnG"/>
+                    </view>
+                    <connections>
+                        <outlet property="headerTextView" destination="yiy-tv-Nmm" id="9L1-0Q-Tmc"/>
+                        <outlet property="tableView" destination="q12-tY-V1F" id="t2y-Ul-1wG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7rR-z9-Csi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-488" y="155.17241379310346"/>
         </scene>
     </scenes>
     <resources>
