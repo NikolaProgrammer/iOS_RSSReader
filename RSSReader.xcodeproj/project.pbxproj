@@ -7,14 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		91248E1620EA097D00D36855 /* UIImage+Downloading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91248E1520EA097D00D36855 /* UIImage+Downloading.swift */; };
+		91248E1920EA29AC00D36855 /* PostsLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91248E1820EA29AC00D36855 /* PostsLayout.swift */; };
 		913A201120E6675D009BEA34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913A201020E6675D009BEA34 /* AppDelegate.swift */; };
-		913A201320E6675D009BEA34 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913A201220E6675D009BEA34 /* ViewController.swift */; };
 		913A201620E6675D009BEA34 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 913A201420E6675D009BEA34 /* Main.storyboard */; };
 		913A201920E6675D009BEA34 /* RSSReader.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 913A201720E6675D009BEA34 /* RSSReader.xcdatamodeld */; };
 		913A201B20E66769009BEA34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 913A201A20E66769009BEA34 /* Assets.xcassets */; };
 		913A201E20E66769009BEA34 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 913A201C20E66769009BEA34 /* LaunchScreen.storyboard */; };
 		913A202920E66769009BEA34 /* RSSReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913A202820E66769009BEA34 /* RSSReaderTests.swift */; };
 		913A203420E66769009BEA34 /* RSSReaderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913A203320E66769009BEA34 /* RSSReaderUITests.swift */; };
+		913A204320E66841009BEA34 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913A204220E66841009BEA34 /* Post.swift */; };
+		913A204620E668F0009BEA34 /* RSSParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913A204520E668F0009BEA34 /* RSSParser.swift */; };
+		913A204B20E67053009BEA34 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913A204A20E67053009BEA34 /* Constants.swift */; };
+		913A204D20E671AA009BEA34 /* ShowPostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913A204C20E671AA009BEA34 /* ShowPostsViewController.swift */; };
+		913A205020E6725A009BEA34 /* PostCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913A204F20E6725A009BEA34 /* PostCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,9 +41,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		91248E1520EA097D00D36855 /* UIImage+Downloading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Downloading.swift"; sourceTree = "<group>"; };
+		91248E1820EA29AC00D36855 /* PostsLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsLayout.swift; sourceTree = "<group>"; };
 		913A200D20E6675D009BEA34 /* RSSReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RSSReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		913A201020E6675D009BEA34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		913A201220E6675D009BEA34 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		913A201520E6675D009BEA34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		913A201820E6675D009BEA34 /* RSSReader.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RSSReader.xcdatamodel; sourceTree = "<group>"; };
 		913A201A20E66769009BEA34 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +56,11 @@
 		913A202F20E66769009BEA34 /* RSSReaderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RSSReaderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		913A203320E66769009BEA34 /* RSSReaderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSReaderUITests.swift; sourceTree = "<group>"; };
 		913A203520E66769009BEA34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		913A204220E66841009BEA34 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		913A204520E668F0009BEA34 /* RSSParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSParser.swift; sourceTree = "<group>"; };
+		913A204A20E67053009BEA34 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		913A204C20E671AA009BEA34 /* ShowPostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowPostsViewController.swift; sourceTree = "<group>"; };
+		913A204F20E6725A009BEA34 /* PostCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +88,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		91248E1420EA092600D36855 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				91248E1520EA097D00D36855 /* UIImage+Downloading.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		91248E1720EA298A00D36855 /* Layouts */ = {
+			isa = PBXGroup;
+			children = (
+				91248E1820EA29AC00D36855 /* PostsLayout.swift */,
+			);
+			path = Layouts;
+			sourceTree = "<group>";
+		};
 		913A200420E6675D009BEA34 = {
 			isa = PBXGroup;
 			children = (
@@ -100,12 +128,17 @@
 			isa = PBXGroup;
 			children = (
 				913A201020E6675D009BEA34 /* AppDelegate.swift */,
-				913A201220E6675D009BEA34 /* ViewController.swift */,
+				913A204A20E67053009BEA34 /* Constants.swift */,
+				913A204720E66FBB009BEA34 /* Controllers */,
+				91248E1420EA092600D36855 /* Extensions */,
+				913A204120E66831009BEA34 /* Model */,
+				91248E1720EA298A00D36855 /* Layouts */,
+				913A204E20E6722C009BEA34 /* CustomView */,
 				913A201420E6675D009BEA34 /* Main.storyboard */,
-				913A201A20E66769009BEA34 /* Assets.xcassets */,
 				913A201C20E66769009BEA34 /* LaunchScreen.storyboard */,
-				913A201F20E66769009BEA34 /* Info.plist */,
+				913A201A20E66769009BEA34 /* Assets.xcassets */,
 				913A201720E6675D009BEA34 /* RSSReader.xcdatamodeld */,
+				913A201F20E66769009BEA34 /* Info.plist */,
 			);
 			path = RSSReader;
 			sourceTree = "<group>";
@@ -126,6 +159,39 @@
 				913A203520E66769009BEA34 /* Info.plist */,
 			);
 			path = RSSReaderUITests;
+			sourceTree = "<group>";
+		};
+		913A204120E66831009BEA34 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				913A204420E668D9009BEA34 /* Helpers */,
+				913A204220E66841009BEA34 /* Post.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		913A204420E668D9009BEA34 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				913A204520E668F0009BEA34 /* RSSParser.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		913A204720E66FBB009BEA34 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				913A204C20E671AA009BEA34 /* ShowPostsViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		913A204E20E6722C009BEA34 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				913A204F20E6725A009BEA34 /* PostCollectionViewCell.swift */,
+			);
+			path = CustomView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,9 +325,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				913A204320E66841009BEA34 /* Post.swift in Sources */,
+				913A204D20E671AA009BEA34 /* ShowPostsViewController.swift in Sources */,
 				913A201920E6675D009BEA34 /* RSSReader.xcdatamodeld in Sources */,
-				913A201320E6675D009BEA34 /* ViewController.swift in Sources */,
 				913A201120E6675D009BEA34 /* AppDelegate.swift in Sources */,
+				91248E1920EA29AC00D36855 /* PostsLayout.swift in Sources */,
+				913A204620E668F0009BEA34 /* RSSParser.swift in Sources */,
+				913A205020E6725A009BEA34 /* PostCollectionViewCell.swift in Sources */,
+				91248E1620EA097D00D36855 /* UIImage+Downloading.swift in Sources */,
+				913A204B20E67053009BEA34 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
