@@ -70,7 +70,7 @@ class PostsLayout: UICollectionViewLayout {
     
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
         return cache.filter { (attributes) -> Bool in
-            return attributes.frame.intersects(rect) ? true : false
+            return attributes.frame.intersects(rect)
         }
     }
     
