@@ -12,18 +12,26 @@ class ContainerViewController: UIViewController {
     
     //MARK: Properties
     @IBOutlet weak var sideMenuConstraint: NSLayoutConstraint!
+    
     private var isSideMenuShown = false
+    
+    override var preferredStatusBarStyle : UIStatusBarStyle {
+        return UIStatusBarStyle.lightContent
+    }
+    
+    var postsSection: MenuSections = .onliner {
+        didSet {
+            showPostsController()
+            toggleSideMenu()
+        }
+    }
     
     //MARK: View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        guard let navigationController = self.childViewControllers[1] as? UINavigationController else {
-            fatalError()
-        }
-        let showPostsController = navigationController.topViewController as! ShowPostsViewController
+        showPostsController()
         
-        showPostsController.delegate = self
     }
     
     //MARK: Private Methods
@@ -35,8 +43,19 @@ class ContainerViewController: UIViewController {
         isSideMenuShown = !isSideMenuShown
     }
     
-    override var preferredStatusBarStyle : UIStatusBarStyle {
-        return UIStatusBarStyle.lightContent
+    private func showPostsController() {
+        
+        let postsController = storyboard?.instantiateViewController(withIdentifier: "ShowPosts") as! ShowPostsViewController
+        postsController.url = postsSection.url
+        postsController.delegate = self
+        
+        guard let navigationController = self.childViewControllers[1] as? UINavigationController else {
+            fatalError("Navigation controller expected")
+        }
+       
+        navigationController.setViewControllers([postsController], animated: true)
+        postsController.navigationItem.title = postsSection.rawValue
+       
     }
 }
 

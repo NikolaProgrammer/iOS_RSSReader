@@ -14,7 +14,8 @@ class SideMenuViewController: UIViewController {
     @IBOutlet weak var headerTextView: UITextView!
     @IBOutlet weak var tableView: UITableView!
     
-    let menuTitles: [String] = ["Onliner.by", "TUT.by", "Lenta.ru"]
+    private let menuTitles: [String] = MenuSections.allValues
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -49,6 +50,9 @@ extension SideMenuViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.menuCell) as! MenuTableViewCell
         
+        let menuItem = MenuSections(rawValue: menuTitles[indexPath.item])
+        
+        cell.section = menuItem
         cell.titleLabel.text = menuTitles[indexPath.row]
         
         return cell
@@ -63,7 +67,7 @@ extension SideMenuViewController: UITableViewDelegate {
                           duration: 0.3,
                           options: .transitionCrossDissolve,
                           animations: {
-                            cell.titleLabel.textColor = #colorLiteral(red: 0.7465571385, green: 0.7465571385, blue: 0.7465571385, alpha: 1)
+                            cell.titleLabel.textColor = #colorLiteral(red: 0.7498123468, green: 0.7498123468, blue: 0.7498123468, alpha: 1)
                             cell.pointersView.isActive = false
                           },
                           completion: nil)
@@ -79,7 +83,9 @@ extension SideMenuViewController: UITableViewDelegate {
                             cell.pointersView.isActive = true
                           },
                           completion: nil)
-    
+        
+        (self.parent as! ContainerViewController).postsSection = cell.section!
+        
     }
 }
 

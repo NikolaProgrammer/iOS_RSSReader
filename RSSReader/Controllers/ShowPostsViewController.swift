@@ -16,23 +16,23 @@ class ShowPostsViewController: UICollectionViewController {
     
     //MARK: Properties
     var posts: [Post] = []
+    var url: String!
+    
     weak var delegate: ShowPostsViewControllerDelegate?
     
-    private var largePostPosition = 1
+    @IBOutlet weak var inProgressIndicatorView: UIActivityIndicatorView!
     
+    private var largePostPosition = 1
+  
     //MARK: View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let parser = RSSParser(url: URL(string: "http://lenta.ru/rss")!)
-        parser.parse()
-        posts = parser.posts
-        
+
         if let layout = collectionView?.collectionViewLayout as? PostsLayout {
             layout.delegate = self
         }
         
-        
+        parse(with: url)
     }
     
     //MARK: Actions
@@ -41,11 +41,6 @@ class ShowPostsViewController: UICollectionViewController {
     }
     
     // MARK: UICollectionViewDataSource
-
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return posts.count
@@ -57,15 +52,30 @@ class ShowPostsViewController: UICollectionViewController {
         }
         
         let post = posts[indexPath.item]
-    
         if let imageURL = post.imageURL {
-            cell.postImage.image = UIImage(url: imageURL)
+            cell.postImage.setImage(by: imageURL)
         }
         cell.titleTextView.text = post.title
         
         return cell
     }
-
+    
+    //MARK: Private Methods
+    private func parse(with url: String) {
+        inProgressIndicatorView.startAnimating()
+        
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            let parser = RSSParser(url: URL(string: url)!)
+            parser.parse()
+            
+            self?.posts = parser.posts
+            DispatchQueue.main.async {
+                self?.inProgressIndicatorView.stopAnimating()
+                self?.collectionView?.reloadData()
+            }
+            
+        }
+    }
 }
 
 extension ShowPostsViewController: PostsLayoutDelegate {
