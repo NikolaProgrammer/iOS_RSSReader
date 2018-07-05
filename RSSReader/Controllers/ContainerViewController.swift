@@ -29,13 +29,13 @@ class ContainerViewController: UIViewController {
     //MARK: View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         showPostsController()
-        
+
     }
     
     //MARK: Private Methods
-    private func toggleSideMenu() {
+    func toggleSideMenu() {
         UIView.animate(withDuration: 0.3) {
             self.sideMenuConstraint.constant = self.isSideMenuShown ? -200 : 0
             self.view.layoutIfNeeded()
@@ -47,7 +47,6 @@ class ContainerViewController: UIViewController {
         
         let postsController = storyboard?.instantiateViewController(withIdentifier: "ShowPosts") as! ShowPostsViewController
         postsController.url = postsSection.url
-        postsController.delegate = self
         
         guard let navigationController = self.childViewControllers[1] as? UINavigationController else {
             fatalError("Navigation controller expected")
@@ -59,8 +58,3 @@ class ContainerViewController: UIViewController {
     }
 }
 
-extension ContainerViewController: ShowPostsViewControllerDelegate {
-    func showPostsViewControllerDidMenuButton(_ view: ShowPostsViewController) {
-        toggleSideMenu()
-    }
-}

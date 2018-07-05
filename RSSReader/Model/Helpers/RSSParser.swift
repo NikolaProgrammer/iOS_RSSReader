@@ -8,6 +8,19 @@
 
 import Foundation
 
+fileprivate struct RSSElements {
+    static let item = "item"
+    static let title = "title"
+    static let description = "description"
+    static let enclosure = "enclosure"
+    
+    static let typeAttribute = "type"
+    static let urlAttribute = "url"
+    
+    static let imageType = "image/jpeg"
+}
+
+
 class RSSParser: NSObject {
     
     private var parser: XMLParser

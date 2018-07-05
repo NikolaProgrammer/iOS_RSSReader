@@ -26,7 +26,9 @@
                             <color key="color" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </activityIndicatorView>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Post Cell" id="yQf-Bn-KcS" customClass="PostCollectionViewCell" customModule="RSSReader" customModuleProvider="target">
+
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="postCell" id="yQf-Bn-KcS" customClass="PostCollectionViewCell" customModule="RSSReader" customModuleProvider="target">
+
                                 <rect key="frame" x="0.0" y="0.0" width="169" height="153"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -178,7 +180,9 @@
                                 <rect key="frame" x="0.0" y="112" width="200" height="555"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="Menu Cell" id="m3e-HJ-TGm" customClass="MenuTableViewCell" customModule="RSSReader" customModuleProvider="target">
+
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="menuCell" id="m3e-HJ-TGm" customClass="MenuTableViewCell" customModule="RSSReader" customModuleProvider="target">
+
                                         <rect key="frame" x="0.0" y="28" width="200" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="m3e-HJ-TGm" id="qUO-Ty-wzz">

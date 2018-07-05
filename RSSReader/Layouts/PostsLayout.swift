@@ -69,15 +69,9 @@ class PostsLayout: UICollectionViewLayout {
     }
     
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
-        var visibleLayoutAttributes = [UICollectionViewLayoutAttributes]()
-        
-        for attributes in cache {
-            if attributes.frame.intersects(rect) {
-                visibleLayoutAttributes.append(attributes)
-            }
+        return cache.filter { (attributes) -> Bool in
+            return attributes.frame.intersects(rect)
         }
-        
-        return visibleLayoutAttributes
     }
     
     override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
