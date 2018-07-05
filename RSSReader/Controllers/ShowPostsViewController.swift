@@ -8,15 +8,10 @@
 
 import UIKit
 
-protocol ShowPostsViewControllerDelegate: class {
-    func showPostsViewControllerDidMenuButton(_ view: ShowPostsViewController)
-}
-
 class ShowPostsViewController: UICollectionViewController {
     
     //MARK: Properties
     var posts: [Post] = []
-    weak var delegate: ShowPostsViewControllerDelegate?
     
     private var largePostPosition = 1
     
@@ -37,7 +32,7 @@ class ShowPostsViewController: UICollectionViewController {
     
     //MARK: Actions
     @IBAction func sideMenuButtonTapped(_ sender: UIBarButtonItem) {
-        delegate?.showPostsViewControllerDidMenuButton(self)
+        (navigationController?.parent as! ContainerViewController).toggleSideMenu()
     }
     
     // MARK: UICollectionViewDataSource

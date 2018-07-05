@@ -22,12 +22,10 @@ class ContainerViewController: UIViewController {
             fatalError()
         }
         let showPostsController = navigationController.topViewController as! ShowPostsViewController
-        
-        showPostsController.delegate = self
     }
     
     //MARK: Private Methods
-    private func toggleSideMenu() {
+    func toggleSideMenu() {
         UIView.animate(withDuration: 0.3) {
             self.sideMenuConstraint.constant = self.isSideMenuShown ? -200 : 0
             self.view.layoutIfNeeded()
@@ -40,8 +38,3 @@ class ContainerViewController: UIViewController {
     }
 }
 
-extension ContainerViewController: ShowPostsViewControllerDelegate {
-    func showPostsViewControllerDidMenuButton(_ view: ShowPostsViewController) {
-        toggleSideMenu()
-    }
-}

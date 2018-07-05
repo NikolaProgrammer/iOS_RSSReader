@@ -21,6 +21,6 @@ struct RSSElements {
 }
 
 struct CellIdentifiers {
-    static let postCell = "Post Cell"
-    static let menuCell = "Menu Cell"
+    static let postCell = "postCell"
+    static let menuCell = "menuCell"
 }
