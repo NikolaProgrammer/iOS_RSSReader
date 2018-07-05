@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		91248E1620EA097D00D36855 /* UIImage+Downloading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91248E1520EA097D00D36855 /* UIImage+Downloading.swift */; };
 		91248E1920EA29AC00D36855 /* PostsLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91248E1820EA29AC00D36855 /* PostsLayout.swift */; };
 		913A201120E6675D009BEA34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913A201020E6675D009BEA34 /* AppDelegate.swift */; };
 		913A201620E6675D009BEA34 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 913A201420E6675D009BEA34 /* Main.storyboard */; };
@@ -47,7 +46,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		91248E1520EA097D00D36855 /* UIImage+Downloading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Downloading.swift"; sourceTree = "<group>"; };
 		91248E1820EA29AC00D36855 /* PostsLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsLayout.swift; sourceTree = "<group>"; };
 		913A200D20E6675D009BEA34 /* RSSReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RSSReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		913A201020E6675D009BEA34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -103,7 +101,6 @@
 		91248E1420EA092600D36855 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				91248E1520EA097D00D36855 /* UIImage+Downloading.swift */,
 				91EDAAA620EE002A0059E2C1 /* UIImageView+Downloading.swift */,
 			);
 			path = Extensions;
@@ -354,7 +351,6 @@
 				91EDAAA520ECD6310059E2C1 /* MenuSection.swift in Sources */,
 				913A204620E668F0009BEA34 /* RSSParser.swift in Sources */,
 				913A205020E6725A009BEA34 /* PostCollectionViewCell.swift in Sources */,
-				91248E1620EA097D00D36855 /* UIImage+Downloading.swift in Sources */,
 				91EDAA9D20EB5A630059E2C1 /* SideMenuViewController.swift in Sources */,
 				913A204B20E67053009BEA34 /* Constants.swift in Sources */,
 				91EDAAA320EB8CC60059E2C1 /* MenuPointersView.swift in Sources */,

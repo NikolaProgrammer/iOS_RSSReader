@@ -38,11 +38,7 @@ class SideMenuViewController: UIViewController {
 }
 
 extension SideMenuViewController: UITableViewDataSource {
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return menuTitles.count
     }
