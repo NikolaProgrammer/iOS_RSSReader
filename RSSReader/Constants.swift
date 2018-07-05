@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct CollectionCells {
-    static let postCell = "Post Cell"
+struct CellIdentifiers {
+    static let postCell = "postCell"
+    static let menuCell = "menuCell"
 }
-
