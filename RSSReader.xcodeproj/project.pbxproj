@@ -20,6 +20,8 @@
 		913A204B20E67053009BEA34 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913A204A20E67053009BEA34 /* Constants.swift */; };
 		913A204D20E671AA009BEA34 /* ShowPostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913A204C20E671AA009BEA34 /* ShowPostsViewController.swift */; };
 		913A205020E6725A009BEA34 /* PostCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913A204F20E6725A009BEA34 /* PostCollectionViewCell.swift */; };
+		916EA62E20EE258D00A624F1 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916EA62D20EE258D00A624F1 /* Category.swift */; };
+		916EA63020EE54A300A624F1 /* CategoryBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916EA62F20EE54A300A624F1 /* CategoryBar.swift */; };
 		91EDAA9D20EB5A630059E2C1 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91EDAA9C20EB5A630059E2C1 /* SideMenuViewController.swift */; };
 		91EDAA9F20EB5C330059E2C1 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91EDAA9E20EB5C330059E2C1 /* ContainerViewController.swift */; };
 		91EDAAA120EB82A60059E2C1 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91EDAAA020EB82A60059E2C1 /* MenuTableViewCell.swift */; };
@@ -65,6 +67,8 @@
 		913A204A20E67053009BEA34 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		913A204C20E671AA009BEA34 /* ShowPostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowPostsViewController.swift; sourceTree = "<group>"; };
 		913A204F20E6725A009BEA34 /* PostCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCollectionViewCell.swift; sourceTree = "<group>"; };
+		916EA62D20EE258D00A624F1 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		916EA62F20EE54A300A624F1 /* CategoryBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryBar.swift; sourceTree = "<group>"; };
 		91EDAA9C20EB5A630059E2C1 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		91EDAA9E20EB5C330059E2C1 /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		91EDAAA020EB82A60059E2C1 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
@@ -177,6 +181,7 @@
 				913A204420E668D9009BEA34 /* Helpers */,
 				913A204220E66841009BEA34 /* Post.swift */,
 				91EDAAA420ECD6310059E2C1 /* MenuSection.swift */,
+				916EA62D20EE258D00A624F1 /* Category.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -205,6 +210,7 @@
 				913A204F20E6725A009BEA34 /* PostCollectionViewCell.swift */,
 				91EDAAA020EB82A60059E2C1 /* MenuTableViewCell.swift */,
 				91EDAAA220EB8CC60059E2C1 /* MenuPointersView.swift */,
+				916EA62F20EE54A300A624F1 /* CategoryBar.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -346,6 +352,8 @@
 				913A201920E6675D009BEA34 /* RSSReader.xcdatamodeld in Sources */,
 				91EDAA9F20EB5C330059E2C1 /* ContainerViewController.swift in Sources */,
 				91EDAAA720EE002A0059E2C1 /* UIImageView+Downloading.swift in Sources */,
+				916EA62E20EE258D00A624F1 /* Category.swift in Sources */,
+				916EA63020EE54A300A624F1 /* CategoryBar.swift in Sources */,
 				913A201120E6675D009BEA34 /* AppDelegate.swift in Sources */,
 				91248E1920EA29AC00D36855 /* PostsLayout.swift in Sources */,
 				91EDAAA520ECD6310059E2C1 /* MenuSection.swift in Sources */,

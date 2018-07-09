@@ -24,10 +24,10 @@ class SideMenuViewController: UIViewController {
         // Shadow for headerTextView
         headerTextView.clipsToBounds = false
         let layer = headerTextView.layer
-        layer.shadowRadius = 1
+        layer.shadowRadius = 0.5
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowOffset = CGSize(width: 0, height: 3)
-        layer.shadowOpacity = 0.5
+        layer.shadowOpacity = 0.3
         
         //tableView header
         let header = UIView(frame: CGRect(x: tableView.frame.origin.x, y: tableView.frame.origin.y, width: tableView.frame.width, height: 40))

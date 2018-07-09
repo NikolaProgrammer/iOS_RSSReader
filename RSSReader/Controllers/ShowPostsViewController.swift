@@ -8,13 +8,14 @@
 
 import UIKit
 
-class ShowPostsViewController: UICollectionViewController {
+class ShowPostsViewController: UIViewController {
     
     //MARK: Properties
     var posts: [Post] = []
     
     var url: String!
-     
+    
+    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var inProgressIndicatorView: UIActivityIndicatorView!
     
     private var largePostPosition = 1
@@ -22,10 +23,11 @@ class ShowPostsViewController: UICollectionViewController {
     //MARK: View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         if let layout = collectionView?.collectionViewLayout as? PostsLayout {
             layout.delegate = self
         }
+//        categoryTabBar.delegate = self
         
         parse(with: url)
     }
@@ -34,27 +36,7 @@ class ShowPostsViewController: UICollectionViewController {
     @IBAction func sideMenuButtonTapped(_ sender: UIBarButtonItem) {
         (navigationController?.parent as! ContainerViewController).toggleSideMenu()
     }
-    
-    // MARK: UICollectionViewDataSource
 
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return posts.count
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellIdentifiers.postCell, for: indexPath) as? PostCollectionViewCell else {
-            fatalError("Current cell is not a instance of PostCollectionViewCell")
-        }
-        
-        let post = posts[indexPath.item]
-        if let imageURL = post.imageURL {
-            cell.postImage.setImage(by: imageURL)
-        }
-        cell.titleTextView.text = post.title
-        
-        return cell
-    }
-    
     //MARK: Private Methods
     private func parse(with url: String) {
         inProgressIndicatorView.startAnimating()
@@ -70,6 +52,26 @@ class ShowPostsViewController: UICollectionViewController {
             }
             
         }
+    }
+}
+
+extension ShowPostsViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return posts.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellIdentifiers.postCell, for: indexPath) as? PostCollectionViewCell else {
+            fatalError("Current cell is not a instance of PostCollectionViewCell")
+        }
+        
+        let post = posts[indexPath.item]
+        if let imageURL = post.imageURL {
+            cell.postImage.setImage(by: imageURL)
+        }
+        cell.titleTextView.text = post.title
+        
+        return cell
     }
 }
 
@@ -90,11 +92,6 @@ extension ShowPostsViewController: PostsLayoutDelegate {
 
     }
 }
-
-
-
-
-
 
 
 
