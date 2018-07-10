@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		91248E1920EA29AC00D36855 /* PostsLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91248E1820EA29AC00D36855 /* PostsLayout.swift */; };
+		912D714820F48B9300A22AF5 /* CategoryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912D714720F48B9300A22AF5 /* CategoryButton.swift */; };
 		913A201120E6675D009BEA34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913A201020E6675D009BEA34 /* AppDelegate.swift */; };
 		913A201620E6675D009BEA34 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 913A201420E6675D009BEA34 /* Main.storyboard */; };
 		913A201920E6675D009BEA34 /* RSSReader.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 913A201720E6675D009BEA34 /* RSSReader.xcdatamodeld */; };
@@ -49,6 +50,7 @@
 
 /* Begin PBXFileReference section */
 		91248E1820EA29AC00D36855 /* PostsLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsLayout.swift; sourceTree = "<group>"; };
+		912D714720F48B9300A22AF5 /* CategoryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryButton.swift; sourceTree = "<group>"; };
 		913A200D20E6675D009BEA34 /* RSSReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RSSReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		913A201020E6675D009BEA34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		913A201520E6675D009BEA34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 				91EDAAA020EB82A60059E2C1 /* MenuTableViewCell.swift */,
 				91EDAAA220EB8CC60059E2C1 /* MenuPointersView.swift */,
 				916EA62F20EE54A300A624F1 /* CategoryBar.swift */,
+				912D714720F48B9300A22AF5 /* CategoryButton.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -359,6 +362,7 @@
 				91EDAAA520ECD6310059E2C1 /* MenuSection.swift in Sources */,
 				913A204620E668F0009BEA34 /* RSSParser.swift in Sources */,
 				913A205020E6725A009BEA34 /* PostCollectionViewCell.swift in Sources */,
+				912D714820F48B9300A22AF5 /* CategoryButton.swift in Sources */,
 				91EDAA9D20EB5A630059E2C1 /* SideMenuViewController.swift in Sources */,
 				913A204B20E67053009BEA34 /* Constants.swift in Sources */,
 				91EDAAA320EB8CC60059E2C1 /* MenuPointersView.swift in Sources */,

@@ -77,7 +77,7 @@
                                 </connections>
                             </collectionView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="VeK-d6-RpK" customClass="CategoryBar" customModule="RSSReader" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="642" width="375" height="25"/>
+                                <rect key="frame" x="0.0" y="634" width="375" height="33"/>
                                 <color key="backgroundColor" red="0.32941176470588235" green="0.32941176470588235" blue="0.32941176470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </stackView>
                         </subviews>
@@ -88,7 +88,7 @@
                             <constraint firstItem="GeF-Eg-Ri0" firstAttribute="trailing" secondItem="QvL-xX-F8A" secondAttribute="trailing" id="NLL-Ki-gt0"/>
                             <constraint firstItem="VeK-d6-RpK" firstAttribute="leading" secondItem="QvL-xX-F8A" secondAttribute="leading" id="SJ3-GG-jr9"/>
                             <constraint firstItem="GeF-Eg-Ri0" firstAttribute="leading" secondItem="QvL-xX-F8A" secondAttribute="leading" id="TS8-vh-mOD"/>
-                            <constraint firstItem="VeK-d6-RpK" firstAttribute="top" secondItem="GeF-Eg-Ri0" secondAttribute="bottom" constant="8" id="bsC-ZG-95J"/>
+                            <constraint firstItem="VeK-d6-RpK" firstAttribute="top" secondItem="GeF-Eg-Ri0" secondAttribute="bottom" id="bsC-ZG-95J"/>
                             <constraint firstItem="VeK-d6-RpK" firstAttribute="bottom" secondItem="QvL-xX-F8A" secondAttribute="bottom" id="nww-WC-acq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QvL-xX-F8A"/>
@@ -102,13 +102,14 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="categoryBar" destination="VeK-d6-RpK" id="w44-QA-Lu7"/>
                         <outlet property="collectionView" destination="GeF-Eg-Ri0" id="L1i-71-3r8"/>
                         <outlet property="inProgressIndicatorView" destination="SV6-ue-qkJ" id="zUn-bM-mmI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4um-IL-hLB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1120.8" y="152.47376311844079"/>
+            <point key="canvasLocation" x="879" y="152"/>
         </scene>
         <!--Container View Controller-->
         <scene sceneID="4SG-j0-8Dy">
@@ -178,7 +179,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GZz-EW-QeV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="377" y="155"/>
+            <point key="canvasLocation" x="196" y="152"/>
         </scene>
         <!--Side Menu View Controller-->
         <scene sceneID="e6V-7w-Iif">
@@ -198,11 +199,11 @@
                                 <fontDescription key="fontDescription" name="Georgia-BoldItalic" family="Georgia" pointSize="28"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="q12-tY-V1F">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="q12-tY-V1F">
                                 <rect key="frame" x="0.0" y="112" width="200" height="555"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="menuCell" id="m3e-HJ-TGm" customClass="MenuTableViewCell" customModule="RSSReader" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="menuCell" id="m3e-HJ-TGm" customClass="MenuTableViewCell" customModule="RSSReader" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="200" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="m3e-HJ-TGm" id="qUO-Ty-wzz">
@@ -210,7 +211,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d5B-Lr-Gc5">
-                                                    <rect key="frame" x="79.5" y="9" width="41" height="26.5"/>
+                                                    <rect key="frame" x="-8" y="9" width="41" height="26.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                     <color key="textColor" red="0.7484299031276147" green="0.7484299031276147" blue="0.7484299031276147" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -265,7 +266,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7rR-z9-Csi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-488" y="155.17241379310346"/>
+            <point key="canvasLocation" x="-347" y="152"/>
         </scene>
     </scenes>
     <resources>

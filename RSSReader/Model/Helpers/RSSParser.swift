@@ -28,6 +28,17 @@ class RSSParser: NSObject {
     private(set) var posts: [Post] = []
     private var tempPost: Post?
     private var tempElement: String?
+    private var sourceTitle: String!
+    
+    private let  categoryNames = [
+        "auto" : ["Авто", "Автоновости"],
+        "world" : ["Мир", "Путешествия", "В мире", "Кругозор", "Происшествия", "Силовые структуры", "Россия"],
+        "sport" : ["Футбол", "Теннис", "Хоккей на траве", "Легкая атлетика", "Хоккей", "Околоспорт", "Спорт"],
+        "immovables" : ["Недвижимость"],
+        "technologies" : ["Технологии", "Гаджеты", "Наука", "Интернет и связь", "Оружие", "Наука и техника"],
+        "society" : ["Люди", "Общество", "Из жизни", "Бывший СССР", "Интернет и СМИ", "Культура"],
+        "finance" : ["Деньги и власть", "Публичный счет", "Экономика", "Ценности"]
+    ]
     
     init(url: URL) {
         parser = XMLParser(contentsOf: url)!
@@ -71,20 +82,26 @@ extension RSSParser: XMLParserDelegate {
     }
     
     func parser(_ parser: XMLParser, foundCharacters string: String) {
-//        if tempElement == "category", !string.contains("\n") {
-//
-//        }
-        
         if tempPost != nil {
-            
             if tempElement == RSSElements.title, !string.contains("\n") {
                 tempPost?.title += string
             }
-            
             if tempElement == RSSElements.description, !string.contains("\n") {
                 tempPost?.description += string
             }
-
+            if tempElement == "category", !string.contains("\n") {
+                for (category, names) in categoryNames {
+                    for name in names {
+                        if string == name {
+                            tempPost?.category = Category(rawValue: category)
+                        }
+                    }
+                }
+            }
+        } else {
+            if tempElement == RSSElements.title, !string.contains("\n"), sourceTitle == nil {
+                sourceTitle = string.replacingOccurrences(of: ":", with: "").replacingOccurrences(of: " ", with: "")
+            }
         }
     }
     

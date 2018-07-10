@@ -13,4 +13,5 @@ struct Post {
     var imageURL: URL? 
     var link: URL?
     var description: String = ""
+    var category: Category?
 }
