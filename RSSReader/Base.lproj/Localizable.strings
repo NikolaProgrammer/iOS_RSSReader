@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  RSSReader
+
+  Created by Nikolay Sereda on 11.07.2018.
+  Copyright © 2018 Nikolay Sereda. All rights reserved.
+*/
+
+"feedback" = "feedback";
+"choose the number" = "choose the number";
+"cancel" = "cancel";
+"This device cannot send email messages" = "This device cannot send email messages";
+"OK" = "OK";
