@@ -66,7 +66,8 @@ class CategoryBar: UIStackView {
         addLayerForSelectedState(button: button)
         delegate?.categoryBarButtonDidChangeState(self, button: button)
     }
-
+    
+    //MARK: Private Methods
     private func addLayerForSelectedState(button: CategoryButton) {
         let buttonIndex = buttons.index(of: button)!
         

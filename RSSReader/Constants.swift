@@ -11,4 +11,11 @@ import Foundation
 struct CellIdentifiers {
     static let postCell = "postCell"
     static let menuCell = "menuCell"
+    static let sourceCell = "sourceCell"
 }
+
+struct StoryBoardIds {
+    static let posts = "ShowPosts"
+    static let offerPost = "OfferPost"
+}
+
