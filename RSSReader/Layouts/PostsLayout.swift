@@ -21,7 +21,6 @@ class PostsLayout: UICollectionViewLayout {
 
     private var cache: [UICollectionViewLayoutAttributes] = []
     private var contentHeight: CGFloat = 0
-    private var actualContentHeight: CGFloat?
     private var contentWidth: CGFloat {
         guard let collectionView = collectionView else {
             return 0
@@ -32,9 +31,6 @@ class PostsLayout: UICollectionViewLayout {
     }
     
     override var collectionViewContentSize: CGSize {
-        if let height = actualContentHeight{
-            return CGSize(width: contentWidth, height: height)
-        }
         return CGSize(width: contentWidth, height: contentHeight)
     }
     
@@ -64,10 +60,10 @@ class PostsLayout: UICollectionViewLayout {
             attributes.frame = insetFrame
             cache.append(attributes)
             
-            contentHeight = max(contentHeight, frame.maxY)
+//            contentHeight = max(contentHeight, frame.maxY)
             yOffset[column] = yOffset[column] + height
+            contentHeight = yOffset[column]
             
-            actualContentHeight = yOffset[column]
             column = column < (numberOfColumns - 1) ? (column + 1) : 0
             
         }

@@ -34,10 +34,16 @@ class ShowPostsViewController: BaseViewController {
         parse(with: url)
     }
     
-//    //MARK: Actions
-//    @IBAction func sideMenuButtonTapped(_ sender: UIBarButtonItem) {
-//        (navigationController?.parent as! ContainerViewController).toggleSideMenu()
-//    }
+    //MARK: Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == SegueIdentifiers.showPostWeb {
+            let destination = segue.destination as! ShowPostWebViewController
+            let selectedPost = sender as! PostCollectionViewCell
+            
+            destination.urlString = selectedPost.link
+            
+        }
+    }
 
     //MARK: Private Methods
     private func parse(with url: String) {
@@ -72,6 +78,7 @@ extension ShowPostsViewController: UICollectionViewDataSource {
             cell.postImage.setImage(by: imageURL)
         }
         cell.titleTextView.text = post.title
+        cell.link = post.link
         
         return cell
     }
@@ -102,6 +109,7 @@ extension ShowPostsViewController: CategoryBarDelegate {
         }
         navigationItem.title = button.category?.categoryName
         
+        largePostPosition = 1
         collectionView.reloadData()
         collectionView.collectionViewLayout.invalidateLayout()
     }

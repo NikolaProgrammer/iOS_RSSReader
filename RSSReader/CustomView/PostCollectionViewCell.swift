@@ -10,6 +10,9 @@ import UIKit
 
 class PostCollectionViewCell: UICollectionViewCell {
     
+    //MARK: Properties
+    var link: String?
+    
     @IBOutlet weak var postImage: UIImageView!
     @IBOutlet weak var titleTextView: UITextView!
     

@@ -16,6 +16,7 @@ class SideMenuViewController: UIViewController {
     
     private let menuTitles: [String] = MenuSections.allValues
     
+    //MARK: View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         

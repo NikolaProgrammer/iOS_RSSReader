@@ -17,5 +17,9 @@ struct CellIdentifiers {
 struct StoryBoardIds {
     static let posts = "ShowPosts"
     static let offerPost = "OfferPost"
+    static let aboutUs = "AboutUs"
 }
 
+struct SegueIdentifiers {
+    static let showPostWeb = "showPostWeb"
+}

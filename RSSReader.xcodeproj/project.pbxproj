@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		911F6FFF20F5F2890023FF5D /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911F6FFE20F5F2890023FF5D /* AboutUsViewController.swift */; };
+		911F700620F619980023FF5D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 911F700820F619980023FF5D /* Localizable.strings */; };
+		911F700B20F622DF0023FF5D /* ShowPostWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911F700A20F622DF0023FF5D /* ShowPostWebViewController.swift */; };
 		91248E1920EA29AC00D36855 /* PostsLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91248E1820EA29AC00D36855 /* PostsLayout.swift */; };
 		912D714820F48B9300A22AF5 /* CategoryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912D714720F48B9300A22AF5 /* CategoryButton.swift */; };
 		913A201120E6675D009BEA34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913A201020E6675D009BEA34 /* AppDelegate.swift */; };
@@ -52,6 +55,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		911F6FFE20F5F2890023FF5D /* AboutUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
+		911F700220F618F60023FF5D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
+		911F700320F618F70023FF5D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		911F700720F619980023FF5D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		911F700920F6199E0023FF5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		911F700A20F622DF0023FF5D /* ShowPostWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowPostWebViewController.swift; sourceTree = "<group>"; };
 		91248E1820EA29AC00D36855 /* PostsLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsLayout.swift; sourceTree = "<group>"; };
 		912D714720F48B9300A22AF5 /* CategoryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryButton.swift; sourceTree = "<group>"; };
 		913A200D20E6675D009BEA34 /* RSSReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RSSReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -158,6 +167,7 @@
 				913A204E20E6722C009BEA34 /* CustomView */,
 				913A201420E6675D009BEA34 /* Main.storyboard */,
 				913A201C20E66769009BEA34 /* LaunchScreen.storyboard */,
+				911F700820F619980023FF5D /* Localizable.strings */,
 				913A201A20E66769009BEA34 /* Assets.xcassets */,
 				913A201720E6675D009BEA34 /* RSSReader.xcdatamodeld */,
 				913A201F20E66769009BEA34 /* Info.plist */,
@@ -206,10 +216,12 @@
 			isa = PBXGroup;
 			children = (
 				913A204C20E671AA009BEA34 /* ShowPostsViewController.swift */,
+				911F700A20F622DF0023FF5D /* ShowPostWebViewController.swift */,
 				91EDAA9C20EB5A630059E2C1 /* SideMenuViewController.swift */,
 				91EDAA9E20EB5C330059E2C1 /* ContainerViewController.swift */,
 				91DB9AFC20F4BA1F00FFA42D /* OfferPostViewController.swift */,
 				91DB9AFE20F4BCC600FFA42D /* BaseViewController.swift */,
+				911F6FFE20F5F2890023FF5D /* AboutUsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -332,6 +344,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				913A201E20E66769009BEA34 /* LaunchScreen.storyboard in Resources */,
+				911F700620F619980023FF5D /* Localizable.strings in Resources */,
 				913A201B20E66769009BEA34 /* Assets.xcassets in Resources */,
 				913A201620E6675D009BEA34 /* Main.storyboard in Resources */,
 			);
@@ -358,10 +371,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				911F700B20F622DF0023FF5D /* ShowPostWebViewController.swift in Sources */,
 				913A204320E66841009BEA34 /* Post.swift in Sources */,
 				91DB9B0120F4C35800FFA42D /* SourceCollectionViewCell.swift in Sources */,
 				913A204D20E671AA009BEA34 /* ShowPostsViewController.swift in Sources */,
 				91EDAAA120EB82A60059E2C1 /* MenuTableViewCell.swift in Sources */,
+				911F6FFF20F5F2890023FF5D /* AboutUsViewController.swift in Sources */,
 				913A201920E6675D009BEA34 /* RSSReader.xcdatamodeld in Sources */,
 				91DB9AFF20F4BCC600FFA42D /* BaseViewController.swift in Sources */,
 				91EDAA9F20EB5C330059E2C1 /* ContainerViewController.swift in Sources */,
@@ -413,10 +428,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		911F700820F619980023FF5D /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				911F700720F619980023FF5D /* ru */,
+				911F700920F6199E0023FF5D /* Base */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		913A201420E6675D009BEA34 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				913A201520E6675D009BEA34 /* Base */,
+				911F700220F618F60023FF5D /* ru */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -425,6 +450,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				913A201D20E66769009BEA34 /* Base */,
+				911F700320F618F70023FF5D /* ru */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -436,6 +462,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -496,6 +523,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
