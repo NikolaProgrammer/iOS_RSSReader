@@ -14,6 +14,8 @@ class ShowPostWebViewController: UIViewController {
 
     //MARK: Properties
     @IBOutlet weak var webView: WKWebView!
+    @IBOutlet weak var loadingPageIndicator: UIActivityIndicatorView!
+    
     
     var urlString: String!
     
@@ -21,12 +23,24 @@ class ShowPostWebViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        webView.navigationDelegate = self
+        
         if !urlString.isEmpty {
             let url = URL(string: urlString)
             let request = URLRequest(url: url!)
-            
+            loadingPageIndicator.startAnimating()
             webView.load(request)
         }
     }
 
+}
+
+extension ShowPostWebViewController: WKNavigationDelegate {
+
+    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
+        loadingPageIndicator.stopAnimating()
+    }
+    func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
+        loadingPageIndicator.stopAnimating()
+    }
 }

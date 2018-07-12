@@ -52,12 +52,18 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" smartDashesType="yes"/>
                                                 </textView>
+                                                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="aFc-zB-lcx">
+                                                    <rect key="frame" x="66" y="27" width="37" height="37"/>
+                                                    <color key="color" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </activityIndicatorView>
                                             </subviews>
                                         </view>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="bjN-Xe-V8h" secondAttribute="trailing" id="3Ha-mP-BhQ"/>
+                                            <constraint firstItem="aFc-zB-lcx" firstAttribute="centerX" secondItem="siN-fO-dHN" secondAttribute="centerX" id="48v-J4-PL8"/>
                                             <constraint firstItem="bjN-Xe-V8h" firstAttribute="top" secondItem="siN-fO-dHN" secondAttribute="bottom" constant="2" id="Nhh-xl-jPD"/>
+                                            <constraint firstItem="aFc-zB-lcx" firstAttribute="centerY" secondItem="siN-fO-dHN" secondAttribute="centerY" id="One-Rp-uZY"/>
                                             <constraint firstItem="siN-fO-dHN" firstAttribute="top" secondItem="Tur-Ld-YML" secondAttribute="top" id="ViR-gx-Tmz"/>
                                             <constraint firstAttribute="trailing" secondItem="siN-fO-dHN" secondAttribute="trailing" id="bBu-XO-FVU"/>
                                             <constraint firstAttribute="bottom" secondItem="bjN-Xe-V8h" secondAttribute="bottom" id="eVg-Fo-yJw"/>
@@ -66,6 +72,7 @@
                                         </constraints>
                                         <size key="customSize" width="169" height="153"/>
                                         <connections>
+                                            <outlet property="imageDownload" destination="aFc-zB-lcx" id="9xN-pE-0I0"/>
                                             <outlet property="postImage" destination="siN-fO-dHN" id="Mp6-V3-a8K"/>
                                             <outlet property="titleTextView" destination="bjN-Xe-V8h" id="OOU-DV-R3n"/>
                                             <segue destination="S5m-id-te3" kind="show" identifier="showPostWeb" id="xHx-OE-sXS"/>
@@ -121,17 +128,24 @@
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="TpE-z6-ud9">
+                                <rect key="frame" x="169" y="325" width="37" height="37"/>
+                                <color key="color" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="TpE-z6-ud9" firstAttribute="centerX" secondItem="mTG-HP-UmJ" secondAttribute="centerX" id="3g0-Gh-cZD"/>
                             <constraint firstItem="mTG-HP-UmJ" firstAttribute="trailing" secondItem="fLM-eO-k8Y" secondAttribute="trailing" id="Hec-XP-yFt"/>
                             <constraint firstItem="mTG-HP-UmJ" firstAttribute="bottom" secondItem="fLM-eO-k8Y" secondAttribute="bottom" id="KFp-v2-iYs"/>
                             <constraint firstItem="mTG-HP-UmJ" firstAttribute="leading" secondItem="fLM-eO-k8Y" secondAttribute="leading" id="LzO-MX-7wA"/>
+                            <constraint firstItem="TpE-z6-ud9" firstAttribute="centerY" secondItem="mTG-HP-UmJ" secondAttribute="centerY" id="mjj-Ju-4pv"/>
                             <constraint firstItem="mTG-HP-UmJ" firstAttribute="top" secondItem="fLM-eO-k8Y" secondAttribute="top" id="rpB-Ks-Xey"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fLM-eO-k8Y"/>
                     </view>
                     <connections>
+                        <outlet property="loadingPageIndicator" destination="TpE-z6-ud9" id="wrx-T5-t3H"/>
                         <outlet property="webView" destination="mTG-HP-UmJ" id="84j-eh-HXe"/>
                     </connections>
                 </viewController>
@@ -345,7 +359,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pfM-Vv-9AW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="878" y="-507"/>
+            <point key="canvasLocation" x="879" y="-590"/>
         </scene>
         <!--About Us View Controller-->
         <scene sceneID="lvP-1R-8x7">

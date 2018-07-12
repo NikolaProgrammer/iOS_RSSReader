@@ -81,7 +81,11 @@ extension OfferPostViewController: UICollectionViewDataSource {
         let cell = headerTabBar.dequeueReusableCell(withReuseIdentifier: CellIdentifiers.sourceCell, for: indexPath) as! SourceCollectionViewCell
         
         let source = sources[indexPath.item]
-
+        
+        if source == .onliner {
+            cell.isSelected = true
+        }
+        
         cell.layer.borderWidth = 0.5
         cell.layer.borderColor = #colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1)
         
@@ -91,6 +95,17 @@ extension OfferPostViewController: UICollectionViewDataSource {
         return cell
     }
     
+}
+
+extension OfferPostViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let visibleCells = collectionView.visibleCells as! [SourceCollectionViewCell]
+        for cell in visibleCells {
+            cell.isSelected = false
+        }
+        
+    }
 }
 
 extension OfferPostViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {

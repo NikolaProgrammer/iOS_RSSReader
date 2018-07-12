@@ -15,7 +15,6 @@ class ShowPostsViewController: BaseViewController {
     private var filteredPosts: [Post] = []
     var url: String!
     
-
     @IBOutlet weak var categoryBar: CategoryBar!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var inProgressIndicatorView: UIActivityIndicatorView!
@@ -33,7 +32,6 @@ class ShowPostsViewController: BaseViewController {
         
         parse(with: url)
     }
-    
     //MARK: Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == SegueIdentifiers.showPostWeb {
@@ -74,14 +72,19 @@ extension ShowPostsViewController: UICollectionViewDataSource {
         }
         
         let post = filteredPosts.isEmpty ? posts[indexPath.item] : filteredPosts[indexPath.item]
+
         if let imageURL = post.imageURL {
-            cell.postImage.setImage(by: imageURL)
+            cell.setImage(by: imageURL)
+        } else {
+            cell.postImage.image = UIImage(named: "default")
         }
+        
         cell.titleTextView.text = post.title
         cell.link = post.link
         
         return cell
     }
+    
 }
 
 extension ShowPostsViewController: PostsLayoutDelegate {
