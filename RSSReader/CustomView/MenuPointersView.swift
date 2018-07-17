@@ -9,7 +9,10 @@
 import UIKit
 
 class MenuPointersView: UIView {
-
+    
+    private let defaultColor = [#colorLiteral(red: 0.7498123468, green: 0.7498123468, blue: 0.7498123468, alpha: 1).cgColor, #colorLiteral(red: 0.7498123468, green: 0.7498123468, blue: 0.7498123468, alpha: 1).cgColor]
+    private let highlitedColor = [#colorLiteral(red: 0.7498123468, green: 0.7498123468, blue: 0.7498123468, alpha: 1).cgColor, #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1).cgColor]
+    
     var isActive = false {
         didSet {
             toggleActiveStatus()
@@ -32,6 +35,7 @@ class MenuPointersView: UIView {
         
         let shape = CAShapeLayer()
         let circle = UIBezierPath(arcCenter: rectCenter, radius: radius, startAngle: CGFloat(0), endAngle: CGFloat.pi * 2, clockwise: true)
+        
         shape.fillColor = #colorLiteral(red: 0.7498123468, green: 0.7498123468, blue: 0.7498123468, alpha: 1)
         shape.path = circle.cgPath
         layer.addSublayer(shape)
@@ -40,13 +44,14 @@ class MenuPointersView: UIView {
     
     //MARK: Private Methods
     private func toggleActiveStatus() {
+        
         if isActive {
-            (layer.sublayers![0] as! CAGradientLayer).colors = [#colorLiteral(red: 0.7498123468, green: 0.7498123468, blue: 0.7498123468, alpha: 1).cgColor, #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1).cgColor]
-            (layer.sublayers![1] as! CAGradientLayer).colors = [#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1).cgColor, #colorLiteral(red: 0.7498123468, green: 0.7498123468, blue: 0.7498123468, alpha: 1).cgColor]
+            (layer.sublayers![0] as! CAGradientLayer).colors = highlitedColor
+            (layer.sublayers![1] as! CAGradientLayer).colors = highlitedColor.reversed()
             (layer.sublayers![2] as! CAShapeLayer).fillColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         } else {
-            (layer.sublayers![0] as! CAGradientLayer).colors = [#colorLiteral(red: 0.7498123468, green: 0.7498123468, blue: 0.7498123468, alpha: 1).cgColor, #colorLiteral(red: 0.7498123468, green: 0.7498123468, blue: 0.7498123468, alpha: 1).cgColor]
-            (layer.sublayers![1] as! CAGradientLayer).colors = [#colorLiteral(red: 0.7498123468, green: 0.7498123468, blue: 0.7498123468, alpha: 1).cgColor, #colorLiteral(red: 0.7498123468, green: 0.7498123468, blue: 0.7498123468, alpha: 1).cgColor]
+            (layer.sublayers![0] as! CAGradientLayer).colors = defaultColor
+            (layer.sublayers![1] as! CAGradientLayer).colors = defaultColor
             (layer.sublayers![2] as! CAShapeLayer).fillColor = #colorLiteral(red: 0.7498123468, green: 0.7498123468, blue: 0.7498123468, alpha: 1)
         }
     }
@@ -55,11 +60,9 @@ class MenuPointersView: UIView {
         
         let shape = CAGradientLayer()
         shape.frame = CGRect(origin: origin, size: rectSize)
-        shape.colors = [#colorLiteral(red: 0.7498123468, green: 0.7498123468, blue: 0.7498123468, alpha: 1).cgColor, #colorLiteral(red: 0.7498123468, green: 0.7498123468, blue: 0.7498123468, alpha: 1).cgColor]
+        shape.colors = defaultColor
         
         layer.addSublayer(shape)
-        
-//        shape.backgroundColor = #colorLiteral(red: 0.7498123468, green: 0.7498123468, blue: 0.7498123468, alpha: 1)
-        
+
     }
 }

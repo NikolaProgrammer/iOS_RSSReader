@@ -8,59 +8,71 @@
 
 import UIKit
 
-class ShowPostsViewController: UICollectionViewController {
+class ShowPostsViewController: UIViewController {
     
     //MARK: Properties
     var posts: [Post] = []
     
-    private var largePostPosition = 1
+    var url: String!
     
+    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var inProgressIndicatorView: UIActivityIndicatorView!
+    
+    private var largePostPosition = 1
+  
     //MARK: View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let parser = RSSParser(url: URL(string: "http://lenta.ru/rss")!)
-        parser.parse()
-        posts = parser.posts
-        
         if let layout = collectionView?.collectionViewLayout as? PostsLayout {
             layout.delegate = self
         }
+//        categoryTabBar.delegate = self
         
-        
+        parse(with: url)
     }
     
     //MARK: Actions
     @IBAction func sideMenuButtonTapped(_ sender: UIBarButtonItem) {
         (navigationController?.parent as! ContainerViewController).toggleSideMenu()
     }
-    
-    // MARK: UICollectionViewDataSource
 
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
+    //MARK: Private Methods
+    private func parse(with url: String) {
+        inProgressIndicatorView.startAnimating()
+        
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            let parser = RSSParser(url: URL(string: url)!)
+            parser.parse()
+            
+            self?.posts = parser.posts
+            DispatchQueue.main.async {
+                self?.inProgressIndicatorView.stopAnimating()
+                self?.collectionView?.reloadData()
+            }
+            
+        }
     }
+}
 
-
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+extension ShowPostsViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return posts.count
     }
-
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellIdentifiers.postCell, for: indexPath) as? PostCollectionViewCell else {
             fatalError("Current cell is not a instance of PostCollectionViewCell")
         }
         
         let post = posts[indexPath.item]
-    
         if let imageURL = post.imageURL {
-            cell.postImage.image = UIImage(url: imageURL)
+            cell.postImage.setImage(by: imageURL)
         }
         cell.titleTextView.text = post.title
         
         return cell
     }
-
 }
 
 extension ShowPostsViewController: PostsLayoutDelegate {
@@ -80,11 +92,6 @@ extension ShowPostsViewController: PostsLayoutDelegate {
 
     }
 }
-
-
-
-
-
 
 
 

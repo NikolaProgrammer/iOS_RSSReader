@@ -6,7 +6,7 @@
 //  Copyright © 2018 Nikolay Sereda. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 struct Post {
     var title: String = ""

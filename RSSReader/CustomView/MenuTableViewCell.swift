@@ -9,7 +9,9 @@
 import UIKit
 
 class MenuTableViewCell: UITableViewCell {
-
+    
+    var section: MenuSections?
+    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var pointersView: MenuPointersView!
     

@@ -51,7 +51,7 @@ extension RSSParser: XMLParserDelegate {
         if elementName == RSSElements.item {
             tempPost = Post()
         }
-        
+
         if tempPost != nil, elementName == RSSElements.enclosure {
             if attributeDict[RSSElements.typeAttribute] == RSSElements.imageType {
                 tempPost?.imageURL = URL(string: attributeDict[RSSElements.urlAttribute]!)
