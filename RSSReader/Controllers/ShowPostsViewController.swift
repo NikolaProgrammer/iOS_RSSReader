@@ -12,9 +12,11 @@ class ShowPostsViewController: UIViewController {
     
     //MARK: Properties
     var posts: [Post] = []
-    
+    private var filteredPosts: [Post] = []
     var url: String!
     
+
+    @IBOutlet weak var categoryBar: CategoryBar!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var inProgressIndicatorView: UIActivityIndicatorView!
     
@@ -27,7 +29,7 @@ class ShowPostsViewController: UIViewController {
         if let layout = collectionView?.collectionViewLayout as? PostsLayout {
             layout.delegate = self
         }
-//        categoryTabBar.delegate = self
+        categoryBar.delegate = self
         
         parse(with: url)
     }
@@ -57,7 +59,7 @@ class ShowPostsViewController: UIViewController {
 
 extension ShowPostsViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return posts.count
+        return filteredPosts.isEmpty ? posts.count : filteredPosts.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -65,7 +67,7 @@ extension ShowPostsViewController: UICollectionViewDataSource {
             fatalError("Current cell is not a instance of PostCollectionViewCell")
         }
         
-        let post = posts[indexPath.item]
+        let post = filteredPosts.isEmpty ? posts[indexPath.item] : filteredPosts[indexPath.item]
         if let imageURL = post.imageURL {
             cell.postImage.setImage(by: imageURL)
         }
@@ -93,5 +95,16 @@ extension ShowPostsViewController: PostsLayoutDelegate {
     }
 }
 
+extension ShowPostsViewController: CategoryBarDelegate {
+    func categoryBarButtonDidChangeState(_ view: CategoryBar, button: CategoryButton) {
+        filteredPosts = posts.filter{ (post) -> Bool in
+            return post.category == button.category
+        }
+        navigationItem.title = button.category?.categoryName
+        
+        collectionView.reloadData()
+        collectionView.collectionViewLayout.invalidateLayout()
+    }
+}
 
 

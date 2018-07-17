@@ -21,6 +21,7 @@ class PostsLayout: UICollectionViewLayout {
 
     private var cache: [UICollectionViewLayoutAttributes] = []
     private var contentHeight: CGFloat = 0
+    private var actualContentHeight: CGFloat?
     private var contentWidth: CGFloat {
         guard let collectionView = collectionView else {
             return 0
@@ -31,13 +32,16 @@ class PostsLayout: UICollectionViewLayout {
     }
     
     override var collectionViewContentSize: CGSize {
+        if let height = actualContentHeight{
+            return CGSize(width: contentWidth, height: height)
+        }
         return CGSize(width: contentWidth, height: contentHeight)
     }
     
     override func prepare() {
         
-        guard cache.isEmpty, let collectionView = collectionView else {
-            return
+        if !cache.isEmpty {
+            cache.removeAll()
         }
         
         let colunmWidth = contentWidth / CGFloat(numberOfColumns)
@@ -49,10 +53,10 @@ class PostsLayout: UICollectionViewLayout {
         var column = 0
         var yOffset = [CGFloat](repeating: 0, count: numberOfColumns)
         
-        for item in 0..<collectionView.numberOfItems(inSection: 0) {
+        for item in 0..<collectionView!.numberOfItems(inSection: 0) {
             
             let indexPath = IndexPath(item: item, section: 0)
-            let height = delegate.collectionview(collectionView, heightForItemAtIndexPath: indexPath) + (cellPadding * 2)
+            let height = delegate.collectionview(collectionView!, heightForItemAtIndexPath: indexPath) + (cellPadding * 2)
             let frame = CGRect(x: xOffset[column], y: yOffset[column], width: colunmWidth, height: height)
             let insetFrame = frame.insetBy(dx: cellPadding, dy: cellPadding)
             
@@ -63,6 +67,7 @@ class PostsLayout: UICollectionViewLayout {
             contentHeight = max(contentHeight, frame.maxY)
             yOffset[column] = yOffset[column] + height
             
+            actualContentHeight = yOffset[column]
             column = column < (numberOfColumns - 1) ? (column + 1) : 0
             
         }

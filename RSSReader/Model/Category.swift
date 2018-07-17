@@ -18,4 +18,27 @@ enum Category: String {
     case world
     
     static let allValues = ["finance", "society", "technologies", "immovables", "sport", "auto", "world"]
+    
+    var categoryName: String {
+        let name: String
+        
+        switch self {
+        case .auto:
+            name = "Авто"
+        case .finance:
+            name = "Финансы"
+        case .immovables:
+            name = "Недвижимость"
+        case .society:
+            name = "Общество"
+        case .sport:
+            name = "Спорт"
+        case .technologies:
+            name = "Технологии"
+        case .world:
+            name = "Мир"
+        }
+        
+        return name
+    }
 }
