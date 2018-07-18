@@ -13,7 +13,6 @@ class OfferPostViewController: BaseViewController {
     
     //MARK: Properties
     private let sources: [MenuSections] = [.tut, .onliner, .lenta]
-    private var imagePickerController: UIImagePickerController!
     private var selectedImage: UIImage? {
         didSet{
             if selectedImage == nil {
@@ -46,22 +45,23 @@ class OfferPostViewController: BaseViewController {
         let layer = postTextView.layer
         layer.borderWidth = 0.5
         
-        //imagePickerController
-        imagePickerController = UIImagePickerController()
-        imagePickerController.delegate = self
-        
     }
     
     //MARK: Actions
     @IBAction func photoButtonTapped(_ sender: UIButton) {
+        let imagePickerController = UIImagePickerController()
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
             imagePickerController.sourceType = .camera
             imagePickerController.mediaTypes = [kUTTypeImage as String]
+            imagePickerController.delegate = self
+            
             present(imagePickerController, animated: true, completion: nil)
         }
     }
     
     @IBAction func attachButtonTapped(_ sender: UIButton) {
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
         imagePickerController.sourceType = .photoLibrary
         present(imagePickerController, animated: true, completion: nil)
     }
