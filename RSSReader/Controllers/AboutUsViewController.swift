@@ -62,15 +62,3 @@ extension AboutUsViewController: MFMailComposeViewControllerDelegate, UINavigati
         controller.dismiss(animated: true, completion: nil)
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
