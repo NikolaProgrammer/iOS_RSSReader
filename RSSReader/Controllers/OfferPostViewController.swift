@@ -104,21 +104,3 @@ extension OfferPostViewController: UIImagePickerControllerDelegate, UINavigation
         dismiss(animated: true, completion: nil)
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
