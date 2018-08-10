@@ -80,7 +80,7 @@ extension SideMenuViewController: UITableViewDelegate {
                           },
                           completion: nil)
         
-        (self.parent as! ContainerViewController).postsSection = cell.section!
+        (self.parent as! ContainerViewController).menuSection = cell.section!
         
     }
 }

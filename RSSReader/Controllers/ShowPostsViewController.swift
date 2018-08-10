@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ShowPostsViewController: UIViewController {
+class ShowPostsViewController: BaseViewController {
     
     //MARK: Properties
     var posts: [Post] = []
@@ -34,10 +34,10 @@ class ShowPostsViewController: UIViewController {
         parse(with: url)
     }
     
-    //MARK: Actions
-    @IBAction func sideMenuButtonTapped(_ sender: UIBarButtonItem) {
-        (navigationController?.parent as! ContainerViewController).toggleSideMenu()
-    }
+//    //MARK: Actions
+//    @IBAction func sideMenuButtonTapped(_ sender: UIBarButtonItem) {
+//        (navigationController?.parent as! ContainerViewController).toggleSideMenu()
+//    }
 
     //MARK: Private Methods
     private func parse(with url: String) {

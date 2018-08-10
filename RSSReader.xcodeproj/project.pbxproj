@@ -23,6 +23,9 @@
 		913A205020E6725A009BEA34 /* PostCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913A204F20E6725A009BEA34 /* PostCollectionViewCell.swift */; };
 		916EA62E20EE258D00A624F1 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916EA62D20EE258D00A624F1 /* Category.swift */; };
 		916EA63020EE54A300A624F1 /* CategoryBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916EA62F20EE54A300A624F1 /* CategoryBar.swift */; };
+		91DB9AFD20F4BA1F00FFA42D /* OfferPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DB9AFC20F4BA1F00FFA42D /* OfferPostViewController.swift */; };
+		91DB9AFF20F4BCC600FFA42D /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DB9AFE20F4BCC600FFA42D /* BaseViewController.swift */; };
+		91DB9B0120F4C35800FFA42D /* SourceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DB9B0020F4C35800FFA42D /* SourceCollectionViewCell.swift */; };
 		91EDAA9D20EB5A630059E2C1 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91EDAA9C20EB5A630059E2C1 /* SideMenuViewController.swift */; };
 		91EDAA9F20EB5C330059E2C1 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91EDAA9E20EB5C330059E2C1 /* ContainerViewController.swift */; };
 		91EDAAA120EB82A60059E2C1 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91EDAAA020EB82A60059E2C1 /* MenuTableViewCell.swift */; };
@@ -71,6 +74,9 @@
 		913A204F20E6725A009BEA34 /* PostCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCollectionViewCell.swift; sourceTree = "<group>"; };
 		916EA62D20EE258D00A624F1 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		916EA62F20EE54A300A624F1 /* CategoryBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryBar.swift; sourceTree = "<group>"; };
+		91DB9AFC20F4BA1F00FFA42D /* OfferPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferPostViewController.swift; sourceTree = "<group>"; };
+		91DB9AFE20F4BCC600FFA42D /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		91DB9B0020F4C35800FFA42D /* SourceCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceCollectionViewCell.swift; sourceTree = "<group>"; };
 		91EDAA9C20EB5A630059E2C1 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		91EDAA9E20EB5C330059E2C1 /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		91EDAAA020EB82A60059E2C1 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
@@ -202,6 +208,8 @@
 				913A204C20E671AA009BEA34 /* ShowPostsViewController.swift */,
 				91EDAA9C20EB5A630059E2C1 /* SideMenuViewController.swift */,
 				91EDAA9E20EB5C330059E2C1 /* ContainerViewController.swift */,
+				91DB9AFC20F4BA1F00FFA42D /* OfferPostViewController.swift */,
+				91DB9AFE20F4BCC600FFA42D /* BaseViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -209,6 +217,7 @@
 		913A204E20E6722C009BEA34 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+				91DB9B0020F4C35800FFA42D /* SourceCollectionViewCell.swift */,
 				913A204F20E6725A009BEA34 /* PostCollectionViewCell.swift */,
 				91EDAAA020EB82A60059E2C1 /* MenuTableViewCell.swift */,
 				91EDAAA220EB8CC60059E2C1 /* MenuPointersView.swift */,
@@ -350,9 +359,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				913A204320E66841009BEA34 /* Post.swift in Sources */,
+				91DB9B0120F4C35800FFA42D /* SourceCollectionViewCell.swift in Sources */,
 				913A204D20E671AA009BEA34 /* ShowPostsViewController.swift in Sources */,
 				91EDAAA120EB82A60059E2C1 /* MenuTableViewCell.swift in Sources */,
 				913A201920E6675D009BEA34 /* RSSReader.xcdatamodeld in Sources */,
+				91DB9AFF20F4BCC600FFA42D /* BaseViewController.swift in Sources */,
 				91EDAA9F20EB5C330059E2C1 /* ContainerViewController.swift in Sources */,
 				91EDAAA720EE002A0059E2C1 /* UIImageView+Downloading.swift in Sources */,
 				916EA62E20EE258D00A624F1 /* Category.swift in Sources */,
@@ -360,6 +371,7 @@
 				913A201120E6675D009BEA34 /* AppDelegate.swift in Sources */,
 				91248E1920EA29AC00D36855 /* PostsLayout.swift in Sources */,
 				91EDAAA520ECD6310059E2C1 /* MenuSection.swift in Sources */,
+				91DB9AFD20F4BA1F00FFA42D /* OfferPostViewController.swift in Sources */,
 				913A204620E668F0009BEA34 /* RSSParser.swift in Sources */,
 				913A205020E6725A009BEA34 /* PostCollectionViewCell.swift in Sources */,
 				912D714820F48B9300A22AF5 /* CategoryButton.swift in Sources */,

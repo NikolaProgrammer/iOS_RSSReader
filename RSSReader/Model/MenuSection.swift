@@ -12,8 +12,9 @@ enum MenuSections: String {
     case tut = "TUT.by"
     case onliner = "Onliner.by"
     case lenta = "Lenta.ru"
+    case offerPost = "Предложить новость"
     
-    static var allValues = ["TUT.by", "Onliner.by", "Lenta.ru"]
+    static var allValues = ["TUT.by", "Onliner.by", "Lenta.ru", "Предложить новость"]
     
     var url: String {
         var url: String
@@ -25,6 +26,8 @@ enum MenuSections: String {
             url = "https://www.onliner.by/feed"
         case .lenta:
             url = "http://lenta.ru/rss"
+        default:
+            fatalError("This is not post page \(self.rawValue)")
         }
         
         return url
