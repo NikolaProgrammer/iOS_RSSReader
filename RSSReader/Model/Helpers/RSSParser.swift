@@ -14,6 +14,7 @@ fileprivate struct RSSElements {
     static let description = "description"
     static let enclosure = "enclosure"
     static let link = "link"
+    static let thumbnail = "media:thumbnail"
     
     static let typeAttribute = "type"
     static let urlAttribute = "url"
@@ -63,7 +64,11 @@ extension RSSParser: XMLParserDelegate {
         if elementName == RSSElements.item {
             tempPost = Post()
         }
-
+        
+        if tempPost != nil, elementName == RSSElements.thumbnail {
+            tempPost?.imageURL = URL(string: attributeDict[RSSElements.urlAttribute]!)
+        }
+        
         if tempPost != nil, elementName == RSSElements.enclosure {
             if attributeDict[RSSElements.typeAttribute] == RSSElements.imageType {
                 tempPost?.imageURL = URL(string: attributeDict[RSSElements.urlAttribute]!)
