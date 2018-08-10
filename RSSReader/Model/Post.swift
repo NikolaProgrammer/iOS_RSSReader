@@ -11,7 +11,7 @@ import Foundation
 struct Post {
     var title: String = ""
     var imageURL: URL? 
-    var link: URL?
+    var link: String = ""
     var description: String = ""
     var category: Category?
 }

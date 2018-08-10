@@ -13,8 +13,9 @@ enum MenuSections: String {
     case onliner = "Onliner.by"
     case lenta = "Lenta.ru"
     case offerPost = "Предложить новость"
+    case aboutUs = "О нас"
     
-    static var allValues = ["TUT.by", "Onliner.by", "Lenta.ru", "Предложить новость"]
+    static var allValues = ["TUT.by", "Onliner.by", "Lenta.ru", "Предложить новость", "О нас"]
     
     var url: String {
         var url: String

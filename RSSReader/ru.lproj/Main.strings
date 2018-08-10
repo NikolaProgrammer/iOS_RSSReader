@@ -1,0 +1,48 @@
+
+/* Class = "UITextView"; text = "RSS READER"; ObjectID = "768-Dq-ESf"; */
+"768-Dq-ESf.text" = "RSS READER";
+
+/* Class = "UILabel"; text = "Source"; ObjectID = "DBr-VQ-s64"; */
+"DBr-VQ-s64.text" = "Source";
+
+/* Class = "UILabel"; text = "или"; ObjectID = "DUG-qL-Ugr"; */
+"DUG-qL-Ugr.text" = "или";
+
+/* Class = "UITextField"; placeholder = "email"; ObjectID = "L9V-Vs-NjJ"; */
+"L9V-Vs-NjJ.placeholder" = "email";
+
+/* Class = "UIButton"; normalTitle = "Оценить приложение"; ObjectID = "NQx-4v-eNc"; */
+"NQx-4v-eNc.normalTitle" = "Оценить приложение";
+
+/* Class = "UILabel"; text = "Контактная информация"; ObjectID = "WVH-Ph-9hG"; */
+"WVH-Ph-9hG.text" = "Контактная информация";
+
+/* Class = "UIButton"; normalTitle = "Обратная связь"; ObjectID = "bZB-vt-8CH"; */
+"bZB-vt-8CH.normalTitle" = "Обратная связь";
+
+/* Class = "UITextView"; text = "Title"; ObjectID = "bjN-Xe-V8h"; */
+"bjN-Xe-V8h.text" = "Title";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "d5B-Lr-Gc5"; */
+"d5B-Lr-Gc5.text" = "Title";
+
+/* Class = "UITextField"; placeholder = "+375(__)___-__-__"; ObjectID = "fYa-C2-cFv"; */
+"fYa-C2-cFv.placeholder" = "+375(__)___-__-__";
+
+/* Class = "UILabel"; text = "Версия 1.0"; ObjectID = "h2L-T7-ckG"; */
+"h2L-T7-ckG.text" = "Версия 1.0";
+
+/* Class = "UILabel"; text = "Текст новости"; ObjectID = "hLr-lI-aWB"; */
+"hLr-lI-aWB.text" = "Текст новости";
+
+/* Class = "UIButton"; normalTitle = "Отправить"; ObjectID = "r3l-66-7tM"; */
+"r3l-66-7tM.normalTitle" = "Отправить";
+
+/* Class = "UIButton"; normalTitle = "Рассказать друзьям"; ObjectID = "rru-Y2-9BG"; */
+"rru-Y2-9BG.normalTitle" = "Рассказать друзьям";
+
+/* Class = "UITextView"; text = "Отправляя новость, Вы соглашаетесь с условиями размещения новости.\nВаша новость будет обрабатана модератором в течении 1 календарного дня."; ObjectID = "s7p-39-gkc"; */
+"s7p-39-gkc.text" = "Отправляя новость, Вы соглашаетесь с условиями размещения новости.\nВаша новость будет обрабатана модератором в течении 1 календарного дня.";
+
+/* Class = "UITextView"; text = "RSS READER"; ObjectID = "yiy-tv-Nmm"; */
+"yiy-tv-Nmm.text" = "RSS READER";

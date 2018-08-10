@@ -68,6 +68,7 @@
                                         <connections>
                                             <outlet property="postImage" destination="siN-fO-dHN" id="Mp6-V3-a8K"/>
                                             <outlet property="titleTextView" destination="bjN-Xe-V8h" id="OOU-DV-R3n"/>
+                                            <segue destination="S5m-id-te3" kind="show" identifier="showPostWeb" id="xHx-OE-sXS"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -103,6 +104,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4um-IL-hLB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="879" y="152"/>
+        </scene>
+        <!--Show Post Web View Controller-->
+        <scene sceneID="9ov-lq-hWg">
+            <objects>
+                <viewController id="S5m-id-te3" customClass="ShowPostWebViewController" customModule="RSSReader" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nPt-TO-eq7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mTG-HP-UmJ">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="mTG-HP-UmJ" firstAttribute="trailing" secondItem="fLM-eO-k8Y" secondAttribute="trailing" id="Hec-XP-yFt"/>
+                            <constraint firstItem="mTG-HP-UmJ" firstAttribute="bottom" secondItem="fLM-eO-k8Y" secondAttribute="bottom" id="KFp-v2-iYs"/>
+                            <constraint firstItem="mTG-HP-UmJ" firstAttribute="leading" secondItem="fLM-eO-k8Y" secondAttribute="leading" id="LzO-MX-7wA"/>
+                            <constraint firstItem="mTG-HP-UmJ" firstAttribute="top" secondItem="fLM-eO-k8Y" secondAttribute="top" id="rpB-Ks-Xey"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fLM-eO-k8Y"/>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="mTG-HP-UmJ" id="84j-eh-HXe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6VA-Rp-nm7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1631.2" y="151.57421289355324"/>
         </scene>
         <!--Offer Post View Controller-->
         <scene sceneID="WkV-6W-YwY">
@@ -310,7 +345,94 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pfM-Vv-9AW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1541.5" y="151.5"/>
+            <point key="canvasLocation" x="878" y="-507"/>
+        </scene>
+        <!--About Us View Controller-->
+        <scene sceneID="lvP-1R-8x7">
+            <objects>
+                <viewController storyboardIdentifier="AboutUs" id="kzP-jo-C3l" customClass="AboutUsViewController" customModule="RSSReader" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dmi-Sa-nmc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bZB-vt-8CH">
+                                <rect key="frame" x="62.5" y="65" width="250" height="45"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="511-FF-bIT"/>
+                                    <constraint firstAttribute="height" constant="45" id="8om-zL-arf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="19"/>
+                                <state key="normal" title="Обратная связь">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="feedbackButtonTapped:" destination="kzP-jo-C3l" eventType="touchUpInside" id="XOH-nk-UoS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NQx-4v-eNc">
+                                <rect key="frame" x="62" y="140" width="250" height="44"/>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="8nr-0a-JyK"/>
+                                    <constraint firstAttribute="height" constant="44" id="FcT-88-a5D"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="19"/>
+                                <state key="normal" title="Оценить приложение">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="rateButtonTapped:" destination="kzP-jo-C3l" eventType="touchUpInside" id="a0E-7G-fmP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rru-Y2-9BG">
+                                <rect key="frame" x="62" y="214" width="250" height="44"/>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="UTQ-qX-7JR"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="aZN-bI-Kfu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="19"/>
+                                <state key="normal" title="Рассказать друзьям">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="shareButtonTapped:" destination="kzP-jo-C3l" eventType="touchUpInside" id="xwR-VP-oEG"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" text="RSS READER" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="768-Dq-ESf">
+                                <rect key="frame" x="102" y="380" width="172.5" height="96"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Georgia-BoldItalic" family="Georgia" pointSize="35"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Версия 1.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h2L-T7-ckG">
+                                <rect key="frame" x="140.5" y="498" width="94" height="20"/>
+                                <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="20"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="768-Dq-ESf" firstAttribute="top" secondItem="rru-Y2-9BG" secondAttribute="bottom" constant="122" id="00d-fd-VDa"/>
+                            <constraint firstItem="NQx-4v-eNc" firstAttribute="centerX" secondItem="EaD-gg-vkO" secondAttribute="centerX" id="4lO-cF-bsX"/>
+                            <constraint firstItem="h2L-T7-ckG" firstAttribute="top" secondItem="768-Dq-ESf" secondAttribute="bottom" constant="22" id="7tI-PE-lpn"/>
+                            <constraint firstItem="NQx-4v-eNc" firstAttribute="top" secondItem="bZB-vt-8CH" secondAttribute="bottom" constant="30" id="87b-6f-8r8"/>
+                            <constraint firstItem="h2L-T7-ckG" firstAttribute="centerX" secondItem="EaD-gg-vkO" secondAttribute="centerX" id="FvN-g4-9Q0"/>
+                            <constraint firstItem="bZB-vt-8CH" firstAttribute="top" secondItem="EaD-gg-vkO" secondAttribute="top" constant="45" id="L1A-6J-D86"/>
+                            <constraint firstItem="768-Dq-ESf" firstAttribute="centerX" secondItem="EaD-gg-vkO" secondAttribute="centerX" id="Nj1-J7-TdP"/>
+                            <constraint firstItem="bZB-vt-8CH" firstAttribute="centerX" secondItem="EaD-gg-vkO" secondAttribute="centerX" id="PRc-RT-g2H"/>
+                            <constraint firstItem="rru-Y2-9BG" firstAttribute="top" secondItem="NQx-4v-eNc" secondAttribute="bottom" constant="30" id="tzW-7c-tOL"/>
+                            <constraint firstItem="rru-Y2-9BG" firstAttribute="centerX" secondItem="EaD-gg-vkO" secondAttribute="centerX" id="xGB-w9-qgz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="EaD-gg-vkO"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nUO-Yl-wFj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="878" y="805"/>
         </scene>
         <!--Container View Controller-->
         <scene sceneID="4SG-j0-8Dy">
@@ -366,6 +488,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="fHZ-MM-xhZ">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

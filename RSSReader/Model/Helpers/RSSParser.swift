@@ -13,6 +13,7 @@ fileprivate struct RSSElements {
     static let title = "title"
     static let description = "description"
     static let enclosure = "enclosure"
+    static let link = "link"
     
     static let typeAttribute = "type"
     static let urlAttribute = "url"
@@ -88,6 +89,9 @@ extension RSSParser: XMLParserDelegate {
             }
             if tempElement == RSSElements.description, !string.contains("\n") {
                 tempPost?.description += string
+            }
+            if tempElement == RSSElements.link, !string.contains("\n") {
+                tempPost?.link += string
             }
             if tempElement == "category", !string.contains("\n") {
                 for (category, names) in categoryNames {
